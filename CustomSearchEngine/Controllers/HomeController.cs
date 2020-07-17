@@ -23,7 +23,6 @@ namespace CustomSearchEngine.Controllers
      
         public ActionResult ShowResults()
         {
-
             string searchQuery = Request["search"];
             string searchurl = Request["searchurl"];
 
@@ -35,14 +34,12 @@ namespace CustomSearchEngine.Controllers
             result.Url = searchurl;
             result.NumberTimes = positions.Count;
             return View(result);
-          
         }
 
        // <summary> 
        //Retrives  the position of the url from a search on
        //www.google.com using the specified search term. 
        // </summary> 
-    
         public static List<int> GetPosition(Uri  url, string searchTerm)
       {
             string raw = "http://www.google.com/search?num=100&q={0}&btnG=Search"; 

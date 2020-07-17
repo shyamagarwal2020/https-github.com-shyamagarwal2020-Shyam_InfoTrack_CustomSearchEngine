@@ -60,14 +60,13 @@ namespace CustomSearchEngine.Controllers
         private static List<int> FindPosition(string html,  Uri url) 
         {
             var urlTagPattern = new Regex(@"<a.*?href=(?<url>.*?)[""'].*?>(?<name>.*?)</a>", RegexOptions.IgnoreCase);
-            var hrefPattern = new Regex(@"HREF={:q}\>", RegexOptions.IgnoreCase);
             var matches = urlTagPattern.Matches(html);
             int position = 0;
             var returnList = new List<int>();
             foreach (Match match in matches)
             {
                 var valueMatch = match.Value;
-                if(valueMatch.Contains("url"))
+                if(valueMatch.Contains("/url"))
                 {
                     if (match.Value.Contains(url.Host))
                     {

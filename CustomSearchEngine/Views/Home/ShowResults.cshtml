@@ -1,0 +1,10 @@
+﻿@model CustomSearchEngine.Models.Result
+<br />
+@{ Html.RenderPartial("Index"); }
+
+   
+   
+ <p class="alert-success"><strong>Your google search result for keywords: "@Model.Keywords" and URL: "@Model.Url" found @Model.NumberTimes times at position "@Model.Results"</strong></p>
+   
+
+
